@@ -82,9 +82,9 @@
             <tbody id="tbody_box">
                 {%for word in saved%}
                     {%set definition=word.definition%}
-                    {%set word=word.word%}
-                    <tr id="the-{{word}}">
-                        <td><a href="/detail/{{word}}?status_give=saved">{{word}}</a></td>
+                    {%set word_target=word.word%}
+                    <tr id="the-{{word_target}}">
+                        <td><a href="/detail/{{word_target}}?status_give=saved">{{word_target}}</a></td>
                         <td>{{definition}}</td>
                     </tr>
                 {%endfor%}
@@ -94,7 +94,7 @@
 
     <footer class="my-3">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><a href="/detail/detail" class="nav-link px-2 text-muted">Detail</a></li>
+            <li class="nav-item"><a href="/detail/detail?status_give={{detail}}" class="nav-link px-2 text-muted">Detail</a></li>
         </ul>
         <p class="text-center text-muted">© 2022 Naterrel, Student</p>
         <div class="nav justify-content-center">

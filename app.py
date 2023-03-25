@@ -35,8 +35,12 @@ def index():
             'word': word['word'], # Mengakses judul atau kata saja
             'definition': definition,
         })
+        if word['word'] == 'detail':
+            detail = 'saved'
+        else:
+            detail = 'new'
     msg = request.args.get('msg')
-    return render_template('index.html',saved=words,msg=msg)
+    return render_template('index.html',saved=words,msg=msg,detail=detail)
 
 @app.route('/detail/<keyword>')
 def detail(keyword):
